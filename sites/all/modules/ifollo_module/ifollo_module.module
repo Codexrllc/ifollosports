@@ -1,0 +1,105 @@
+<?php
+/**
+ * Implements hook_views_post_execute().
+ *
+ * If there is a pager display output rel links
+ * @see https://support.google.com/webmasters/answer/1663744?hl=en
+ */
+function ifollo_module_views_post_execute(&$view) {
+  // @todo - only works if we can expect one pager per page.
+  if ($view->display[$view->current_display]->handler->use_pager()) {
+    $current_page = $view->query->pager->current_page;
+    $items_per_page = $view->query->pager->options['items_per_page'];
+    $last_item_viewed = ($current_page * $items_per_page) + $items_per_page;
+    $total_items = $view->query->pager->total_items;
+    ifollo_module_set_rel_links(current_path(), $current_page, $last_item_viewed, $total_items);
+  }
+}
+
+/**
+ * Set the rel links in html head.
+ *
+ * @param string $current_path
+ *   Path of current page.
+ * @param int $current_page
+ *   The current page number starts with 0.
+ * @param int $last_item_viewed
+ *   The number of the last item on display on this page.
+ * @param int $total_items
+ *   The total number of items in the results.
+ */
+function ifollo_module_set_rel_links($current_path, $current_page, $last_item_viewed, $total_items) {
+  $head_links = ifollo_module_prep_rel_links($current_path, $current_page, $last_item_viewed, $total_items);
+  foreach ($head_links as $head_link) {
+    drupal_add_html_head_link($head_link);
+  }
+}
+
+/**
+ * Prepare the rel links for html head.
+ *
+ * @see ifollo_module_set_rel_links()
+ *
+ * @param string $current_path
+ *   Path of current page.
+ * @param int $current_page
+ *   The current page number starts with 0.
+ * @param int $last_item_viewed
+ *   The number of the last item on display on this page.
+ * @param int $total_items
+ *   The total number of items in the results.
+ *
+ * @return array
+ *   Array of rel links to add to html head.
+ */
+function ipress_module_prep_rel_links($current_path, $current_page, $last_item_viewed, $total_items) {
+  // Prepare link rel=prev if current page > 0.
+  $head_links = array();
+  if ($current_page > 0) {
+    if ($current_page > 1) {
+      $parameters = array(
+        'page' => $current_page - 1,
+      );
+    }
+    else {
+      $parameters = array();
+    }
+    $query = drupal_get_query_parameters($parameters, array());
+    if ($query_pager = pager_get_query_parameters()) {
+      $query = array_merge($query, $query_pager);
+    }
+    $head_link = array(
+      'rel' => 'prev',
+      'href' => url(
+        $current_path,
+        array(
+          'query' => $query,
+        )
+      ),
+    );
+    $head_links[] = $head_link;
+  }
+  // Prepare link rel=next if more pages available.
+  if ($total_items > $last_item_viewed) {
+    $parameters = array(
+      'page' => $current_page + 1,
+    );
+    $query = drupal_get_query_parameters($parameters, array());
+    if ($query_pager = pager_get_query_parameters()) {
+      $query = array_merge($query, $query_pager);
+    }
+    $head_link = array(
+      'rel' => 'next',
+      'href' => url(
+        $current_path,
+        array(
+          'query' => $query,
+        )
+      ),
+    );
+    $head_links[] = $head_link;
+  }
+
+  return $head_links;
+}
+?>

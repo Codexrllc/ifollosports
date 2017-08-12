@@ -1,0 +1,6 @@
+name = ifollo Pager
+description = Improved pager with canonical links
+core = 7.x
+package = Views
+dependencies[] = views
+configure = admin/config/content/ifollo_pager
