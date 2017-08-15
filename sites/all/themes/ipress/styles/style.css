@@ -862,9 +862,9 @@ li li a .sf-sub-indicator {
 	white-space: nowrap;
 	line-height: 1.2em;
 }
-.ticker-content:focus {
+/*.ticker-content:focus {
 	none;
-}
+}*/
 .ticker-content a {
 	text-decoration: none;	
 	color: #fff;
@@ -2868,6 +2868,21 @@ li.jcarousel-item {
     /** Some weirdness with the Sharethis styles requires this below **/
     padding-top: 3px;
 }
+
+
+/** Overriding a sneaky ad that wants to be larger than it should be **/
+.node-type-article-list center > div, .node-type-article-list .banner-ad > div {
+    width: auto !important;
+}
+
+.node-type-article-list center > a, .node-type-article-list .banner-ad > a {
+    position: relative;
+}
+
+/** Temporarily removing second Google ad display until a more legitimate method can be found out**/
+#adContent #core4, #adContent #core5, #adContent #core6, #adContent #core7 {
+    display: none;
+} 
 
 /*#footer-menu .search-form form {
 	position: relative;

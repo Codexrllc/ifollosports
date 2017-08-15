@@ -69,7 +69,7 @@
 
 			
 
-	<div class="rank"><?php print $view->result[0]->field_field_picture[0]['rendered']['#item']['image_field_caption']['value'] ?></div>
+	<div class="rank"><?php //print $view->result[0]->field_field_picture[0]['rendered']['#item']['image_field_caption']['value'] ?></div>
 		  	  <div class="banner-ad lower-listicle-ad">
 	  <?php $block = module_invoke('block', 'block_view', '42');
 	  print render($block['content']); ?>
