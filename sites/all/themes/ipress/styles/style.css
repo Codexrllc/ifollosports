@@ -256,7 +256,7 @@ textarea {
 	width:57.333%;
 }
 .grid_8.alpha,.grid_8.omega {
-	width:65.667%;
+	width:100%;
 }
 .grid_9.alpha,.grid_9.omega {
 	width:74.0%;
@@ -2855,9 +2855,21 @@ li.jcarousel-item {
 	float: right;
 	padding-right: 35px;
 }
+
+.sharethis-wrapper {
+    width: 100%;
+    height: 35px;
+    background-color: red;
+    position: fixed;
+    z-index: 50;
+    top: 9em;
+    text-align: center;
+    vertical-align: middle;
+    /** Some weirdness with the Sharethis styles requires this below **/
+    padding-top: 3px;
 }
 
-#footer-menu .search-form form {
+/*#footer-menu .search-form form {
 	position: relative;
 }
 #footer-menu .search-form input {
@@ -2867,7 +2879,7 @@ li.jcarousel-item {
 	height: 30px;
 	border: 1px solid #eee;
 	/*border-radius: 3px;*/
-	font-size: 17px;
+	/*font-size: 17px;
 	color: #808080;
 	width: 200px;
 	-webkit-box-sizing: border-box;
@@ -2890,7 +2902,7 @@ li.jcarousel-item {
 }
 #footer-menu .search-form button:hover {
 	color: #E84A4A
-}
+}*/
 
 /* #footer-menu ul.sf-menu:before { */
     /* content: url(/sites/default/files/ifollosports-180-square-logo-blue.png); */
