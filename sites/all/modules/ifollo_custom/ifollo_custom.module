@@ -1,0 +1,28 @@
+<?php
+/**
+ * Custom functionality for iFolloSports site.
+ */
+
+/**
+ * Implements hook_views_pre_build().
+ */
+function ifollo_custom_views_pre_build(&$view) {
+    if($view->name == 'slideshow_pager_view') {
+    $url = arg();
+    if (isset($url[1])) {
+      if ($normal_path = drupal_get_normal_path($url[1])) {
+        $path_args = explode('/', $normal_path);
+      }
+    }
+    if (isset($path_args[0])) {
+        $node = node_load($path_args[0]);
+        if(isset($node->field_count[LANGUAGE_NONE][0]['value'])) {
+            $count = $node->field_count[LANGUAGE_NONE][0]['value'];
+        }
+        else {
+            $count = 1;
+        }
+      $view->set_items_per_page($count);
+    }
+  }
+}
