@@ -288,6 +288,7 @@ function ifollo_main_strongarm() {
     'article_list' => 'article_list',
     'article' => 'article',
     'celebrity_story' => 'celebrity_story',
+    '5_article_list' => 0,
     'page' => 0,
     'celebrity' => 0,
     'social' => 0,

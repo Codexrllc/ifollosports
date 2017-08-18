@@ -1,6 +1,7 @@
 name = iFolloMain
 core = 7.x
 package = Features
+dependencies[] = ifollo_custom
 dependencies[] = strongarm
 features[context][] = listicle_blocks
 features[context][] = mlb_headlines

@@ -13,6 +13,7 @@ function ifollo_main_metatag_export_default() {
   // Exported Metatag config instance: global.
   $config['global'] = array(
     'instance' => 'global',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[current-page:title] | [current-page:pager][site:name] | A Behind the Scenes Look at Sports',
@@ -150,6 +151,7 @@ function ifollo_main_metatag_export_default() {
   // Exported Metatag config instance: global:frontpage.
   $config['global:frontpage'] = array(
     'instance' => 'global:frontpage',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name] | [current-page:pager] | A Behind the Scenes Look at Sports',
@@ -166,6 +168,7 @@ function ifollo_main_metatag_export_default() {
   // Exported Metatag config instance: node.
   $config['node'] = array(
     'instance' => 'node',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[node:title] | [site:name] | A Behind the Scenes Look at Sports',
@@ -185,6 +188,7 @@ function ifollo_main_metatag_export_default() {
   // Exported Metatag config instance: node:celebrity.
   $config['node:celebrity'] = array(
     'instance' => 'node:celebrity',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[node:title] | [site:name] | A Behind the Scenes Look at Sports',
@@ -209,6 +213,7 @@ function ifollo_main_metatag_export_default() {
   // Exported Metatag config instance: node:teams.
   $config['node:teams'] = array(
     'instance' => 'node:teams',
+    'disabled' => FALSE,
     'config' => array(
       'robots' => array(
         'value' => array(

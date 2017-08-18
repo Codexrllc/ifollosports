@@ -143,11 +143,16 @@ function ifollo_main_views_default_views() {
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Sort criterion: Content: Picture (field_picture:title) */
   $handler->display->display_options['sorts']['field_picture_title']['id'] = 'field_picture_title';
   $handler->display->display_options['sorts']['field_picture_title']['table'] = 'field_data_field_picture';
   $handler->display->display_options['sorts']['field_picture_title']['field'] = 'field_picture_title';
   $handler->display->display_options['sorts']['field_picture_title']['order'] = 'DESC';
+  /* Sort criterion: Content: Picture (field_picture:delta) */
+  $handler->display->display_options['sorts']['delta']['id'] = 'delta';
+  $handler->display->display_options['sorts']['delta']['table'] = 'field_data_field_picture';
+  $handler->display->display_options['sorts']['delta']['field'] = 'delta';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -180,7 +185,7 @@ function ifollo_main_views_default_views() {
   $handler = $view->new_display('block', 'Slideshow Pager Block', 'block_1');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -228,6 +233,7 @@ function ifollo_main_views_default_views() {
   $handler->display->display_options['fields']['caption']['table'] = 'field_picture_field_image_field_caption';
   $handler->display->display_options['fields']['caption']['field'] = 'caption';
   $handler->display->display_options['fields']['caption']['label'] = '';
+  $handler->display->display_options['fields']['caption']['exclude'] = TRUE;
   $handler->display->display_options['fields']['caption']['element_label_colon'] = FALSE;
   /* Field: Content: ShareThis Link */
   $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
