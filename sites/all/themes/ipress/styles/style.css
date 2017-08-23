@@ -2887,7 +2887,7 @@ li.jcarousel-item {
  
  .sharethis-wrapper {
      position: absolute;
-     margin-top: 150px;
+     margin-top: 110px;
  }
 
 /* Overriding CSS injector, remove when it is figured out why deleting this from the database doesn't work */
