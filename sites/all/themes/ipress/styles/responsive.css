@@ -211,17 +211,17 @@
 
 /** Sharethis link responsive **/
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 650px) {
     .sharethis-wrapper .stButton .stLarge {
         height: 16px;
         width: 16px;
     }
     .sharethis-wrapper {
         height: 21px;
-        top: 10.5em;
+        margin-top: 190px;
     }
 }
-
+/*
 @media only screen and (min-width: 1200px) {
     .sharethis-wrapper {
         top: 7em;
@@ -232,4 +232,4 @@
     .sharethis-wrapper {
         top: 10em;
     }
-}
+}*/

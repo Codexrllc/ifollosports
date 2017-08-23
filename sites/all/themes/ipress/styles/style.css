@@ -2856,7 +2856,20 @@ li.jcarousel-item {
 	padding-right: 35px;
 }
 
-.sharethis-wrapper {
+.social-media-side {
+    width: 7%;
+}
+
+.node-type-article-list .grid_8.alpha, .node-type-celebrity-story .grid_8.alpha, .node-type-article .grid_8.alpha {
+        float: right;
+    width: 93%;
+}
+
+.sharethis-wrapper span {
+    display: block;
+}
+
+/*.sharethis-wrapper {
     width: 100%;
     height: 35px;
     background-color: red;
@@ -2866,7 +2879,17 @@ li.jcarousel-item {
     text-align: center;
     vertical-align: middle;
     /** Some weirdness with the Sharethis styles requires this below **/
-    padding-top: 3px;
+ /*   padding-top: 3px;
+}*/
+ 
+ .sharethis-wrapper {
+     position: absolute;
+     margin-top: 150px;
+ }
+
+/* Overriding CSS injector, remove when it is figured out why deleting this from the database doesn't work */
+.image-field-caption {
+    display: inherit !important;
 }
 
 
@@ -2880,9 +2903,22 @@ li.jcarousel-item {
 }
 
 /** Temporarily removing second Google ad display until a more legitimate method can be found out**/
-#adContent #core4, #adContent #core5, #adContent #core6, #adContent #core7 {
+/*#adContent #core4, #adContent #core5, #adContent #core6, #adContent #core7 {
     display: none;
-} 
+}*/
+
+.adsbygoogle iframe {
+    max-height: 232px !important;
+}
+
+@media only screen and (min-width: 1175px) {
+.node-type-article-list .image-field-caption p {
+    width: calc(93% - 300px);
+}
+.node-type-article-list .views-field-field-picture img {
+width: calc(93% - 300px);
+}
+}
 
 /*#footer-menu .search-form form {
 	position: relative;

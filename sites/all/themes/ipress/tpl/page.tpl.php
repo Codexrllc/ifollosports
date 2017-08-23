@@ -34,6 +34,18 @@
 					<?php
 						endif;
 					?>
+                                    					<?php
+						if ($page['social_media_side']):
+					?>
+                                    <div class="social-media-side">
+                                        
+                                        <?php print render($page['social_media_side']); ?>
+                                        
+                                    </div>
+                                    
+                                    				<?php
+						endif;
+					?>
 					
 
 					<div class="grid_8 alpha posts">
