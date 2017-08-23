@@ -258,6 +258,9 @@ textarea {
 .grid_8.alpha,.grid_8.omega {
 	width:100%;
 }
+.front .grid_8.alpha, .front .grid_8.omega {
+	width:65.667%;
+}
 .grid_9.alpha,.grid_9.omega {
 	width:74.0%;
 }
