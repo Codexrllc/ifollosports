@@ -56,10 +56,7 @@
   <?php if ($rows): ?>
     <div class="view-content">
       <?php print $rows; ?>
-		  <div class="ad-right skyscraper-ad">	  
-		  <?php $block = module_invoke('block', 'block_view', '32');
-		  print render($block['content']); ?>
-		  </div>
+
 	<?php if ($pager): ?>
     <?php print $pager; ?>
 	  <div class="mobile-ad mobile-list">
@@ -82,7 +79,7 @@
 	  <?php $block = module_invoke('block', 'block_view', '35');
 	  print render($block['content']); ?>
 	  </div>
-	  <?php print $view->style_plugin->rendered_fields[0]['sharethis']; ?>
+	  <?php //print $view->style_plugin->rendered_fields[0]['sharethis']; ?>
 	  <div><?php $block = module_invoke('block', 'block_view', '39');
 	  print render($block['content']); ?>
 	  </div>

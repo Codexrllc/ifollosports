@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Custom functionality for iFolloSports site.
  */
@@ -26,3 +27,60 @@ function ifollo_custom_views_pre_build(&$view) {
     }
   }
 }
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function ifollo_custom_views_query_alter(&$view, &$query) {
+    
+    if($view->name == 'footer_block') {
+    
+    $args = arg();
+    $node = node_load($args[1]);
+            $values_cat = array();
+        $values_tags = array();
+    if(!empty($node->field_category)) {
+        $values_cat_tid = $node->field_category[LANGUAGE_NONE];
+        $values_cat = ifollo_return_tid($values_cat_tid);
+    }
+    if(!empty($node->field_tags)) {
+        $values_tags_tid = $node->field_tags[LANGUAGE_NONE];
+        $values_tags = ifollo_return_tid($values_tags_tid);
+    }
+    if(!empty($values_tags)) {
+$result_tags = ifollo_custom_db_check($values_tags);
+if($result_tags >= 5) {
+    ifollo_custom_add_values_to_where($query, $values_tags);
+} else {
+        $combined_values = array_merge($values_cat, $values_tags);
+        if(!empty($combined_values)) {
+ifollo_custom_add_values_to_where($query, $combined_values);
+        }
+    }
+}
+    }
+}
+    /**
+     * Returns an array with all of the values under the tid key returned.
+     */
+    function ifollo_return_tid($values_outer) {
+        $values = array_map(function ($ar) {return $ar['tid'];}, $values_outer);
+        return $values;
+    }
+    
+    /**
+     * Returns a result number for stories related to the tags in question.
+     */
+    function ifollo_custom_db_check($values_tids) {
+        $result = db_query("SELECT * FROM {field_data_field_tags} t WHERE t.field_tags_tid IN (:tid) AND t.entity_type = 'node' AND t.bundle = 'celebrity_story'", array(':tid' => $values_tids))->rowCount();
+        return $result;
+    }
+    
+    /**
+     * Adds the values to the where clause for stories.
+     */
+    function ifollo_custom_add_values_to_where(&$query, $values_tids) {
+        $query->add_table('taxonomy_index');
+        $query->table_queue['taxonomy_index']['join']->type = "INNER";
+        $query->add_where(0, 'taxonomy_index.tid', $values_tids, 'IN');
+    }
