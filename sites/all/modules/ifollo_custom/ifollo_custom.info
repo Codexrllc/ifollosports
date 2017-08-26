@@ -1,3 +1,5 @@
 name = iFollo Custom
 description = iFollo Custom
 core = 7.x
+
+scripts[] = js/ifollo_custom.js
