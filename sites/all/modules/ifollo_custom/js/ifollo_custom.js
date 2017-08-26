@@ -3,12 +3,9 @@ Drupal.behaviors.ifollo_custom = {
   attach: function (context, settings) {
       $(window).scroll(function (event) {
  var scroll = $(window).scrollTop();
- console.log(scroll);
- console.log("SCROLL HERE");
  var height = $('.grid_8').height();
  var height_offset = $('.grid_9').offset().top;
  var no_listicle = 0;
- console.log($('.no-listicle').height());
  if($('.no-listicle').height() !== null) {
      no_listicle = $('.no-listicle').height();
       height = height - no_listicle;
