@@ -2659,8 +2659,8 @@ li.comment-add.first.last {
 }
 /*Blog Page Styling*/
 .field.field-name-body.field-type-text-with-summary.field-label-hidden img {
-    max-width: 65%;
-    padding: 5px;
+    max-width: 50%;
+    /*padding: 5px;*/
 	margin: 0 0 10px 10px;
 }
 
@@ -2917,6 +2917,24 @@ li.jcarousel-item {
 .node-type-article-list .views-field-field-picture img {
 width: calc(93% - 300px);
 }
+}
+
+.node-type-celebrity-story  #block-inject-1, .node-type-article #block-inject-1 {
+    width: 50%;
+    float: left;
+}
+
+.node-type-celebrity-story .field-name-body p, .node-type-article .field-name-body p {
+    width: 50%;
+}
+
+.node-type-article .field-name-body p img {
+    position: absolute;
+    right: 0;
+}
+
+.node-type-celebrity-story .field-name-body .clearfix, .node-type-article .field-name-body .clearfix {
+    display: none; /** Seemingly unneeded **/
 }
 
 /*#footer-menu .search-form form {
