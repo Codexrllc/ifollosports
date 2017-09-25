@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AdvAgg Config feature.
+ */
+
+include_once 'advagg_config.features.inc';

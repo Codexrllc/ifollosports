@@ -6,6 +6,11 @@
  */
 
 /**
+ * @addtogroup 3rd_party_hooks
+ * @{
+ */
+
+/**
  * Implements hook_drush_cache_clear().
  */
 function advagg_drush_cache_clear(&$types) {
@@ -67,6 +72,10 @@ function advagg_drush_command() {
   );
   return $items;
 }
+
+/**
+ * @} End of "addtogroup 3rd_party_hooks".
+ */
 
 /**
  * Callback function for drush advagg-force-new-aggregates.
@@ -189,12 +198,28 @@ function drush_advagg_cron() {
     // format_plural() not always available.
     drupal_set_message(dt('Some oleftover temporary files were found. A total of %count temporary files were removed.', array('%count' => $output[5])), 'ok');
   }
+
+  // Output results from running advagg_refresh_all_locale_files().
+  if (empty($output[6])) {
+    drupal_set_message(dt('Locale did not translate anything in any JavaScript files.'), 'ok');
+  }
+  else {
+    drupal_set_message(dt('Locale did translate some JavaScript files. Resulting locale js files: @files', array('@files' => print_r($output[6], TRUE))), 'ok');
+  }
 }
 
 /**
  * Flush the correct caches so CSS/JS changes go live.
  */
 function drush_advagg_smart_cache_flush() {
+  // Clear the libraries cache.
+  if (function_exists('libraries_flush_caches')) {
+    $cache_tables = libraries_flush_caches();
+    foreach ($cache_tables as $table) {
+      cache_clear_all('*', $table, TRUE);
+    }
+  }
+
   // Run the command.
   module_load_include('inc', 'advagg', 'advagg.cache');
   $flushed = advagg_push_new_changes();
@@ -215,10 +240,11 @@ function drush_advagg_smart_cache_flush() {
         continue;
       }
       $ext = pathinfo($filename, PATHINFO_EXTENSION);
-      drush_log(dt('The file %filename has changed. %db_usage aggregates are using this file. %db_count db cache entries and all %type full cache entries have been flushed from the cache bins.', array(
+      drush_log(dt('The file %filename has changed. %db_usage aggregates are using this file. %db_count db cache entries and all %type full cache entries have been flushed from the cache bins. Trigger: @changes', array(
         '%filename' => $filename,
         '%db_usage' => $data[0],
         '%db_count' => $data[1],
+        '@changes' => print_r($data[2], TRUE),
         '%type' => $ext,
       )), 'ok');
     }

@@ -8,7 +8,7 @@
 /**
  * Form builder; Configure advagg settings.
  *
- * @ingroup forms
+ * @ingroup advagg_forms
  *
  * @see system_settings_form()
  */
@@ -24,7 +24,7 @@ function advagg_sri_admin_settings_form() {
       0 => t('Disabled'),
       1 => t('SHA-256'),
       2 => t('SHA-384'),
-      3 => t('SHA-512')
+      3 => t('SHA-512'),
     ),
   );
 
@@ -43,9 +43,10 @@ function advagg_sri_admin_settings_form() {
   return system_settings_form($form);
 }
 
-// Submit callback.
 /**
- * Clear out the advagg cache bin when the save configuration button is pressed.
+ * Submit callback, clears out the advagg cache bin.
+ *
+ * @ingroup advagg_forms_callback
  */
 function advagg_sri_admin_settings_form_submit($form, &$form_state) {
   // Clear caches.
