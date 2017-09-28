@@ -2550,7 +2550,7 @@ a.notification-close {
 
 .mb { margin-bottom: 20px !important }
 .mbt { margin-bottom: 30px !important }
-.mbf { margin-bottom: 40px !important }
+.mbf { margin-bottom: 80px !important }
 .mbff { margin-bottom: 50px !important }
 .mbs { margin-bottom: 70px !important  }
 
@@ -2635,8 +2635,10 @@ li li .subarrow {
 }
 /*Celebrity Page Styling*/
 .field.field-name-field-picture.field-type-image.field-label-hidden img {
-    width: auto;
+    max-width: 28.5em;
+    max-height: 38em;
     float:right;
+    object-fit: cover;
     /*margin-right: 8%;*/
 }
 
@@ -2914,9 +2916,13 @@ li.jcarousel-item {
 .node-type-article-list .image-field-caption p {
     width: calc(93% - 300px);
 }
-.node-type-article-list .views-field-field-picture img {
+.node-type-article-list .grid_8 .views-field-field-picture img {
 width: calc(93% - 300px);
 }
+}
+
+.pager {
+    margin-bottom: 10px;
 }
 
 .node-type-celebrity-story  #block-inject-1/*, .node-type-article #block-inject-1*/ {
@@ -2926,9 +2932,11 @@ width: calc(93% - 300px);
 
 /* Both inline-block and float: left work better but kill the ad */
 .node-type-article #block-inject-1/*,.node-type-celebrity-story #block-inject-1*/ {
-    /*display: inline-block;*/
+    display: inline-block;
+    width: 640px;
+    height: 100px;
     /*float: left;*/
-    margin-bottom: 175px;
+    /*margin-bottom: 175px;*/
 }
 
 #ad_iframe {
@@ -2942,6 +2950,10 @@ width: calc(93% - 300px);
 
 /*.node-type-celebrity-story .field-name-body p*//*, .node-type-article .field-name-body p {
     width: 50%;
+}*/
+
+/*.node-type-celebrity-story .field-name-body p, .node-type-article .field-name-body p {
+    clear:both;
 }*/
 
 /*.node-type-article .field-name-body p:first-of-type img:first-of-type {
