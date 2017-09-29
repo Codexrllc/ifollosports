@@ -2956,6 +2956,10 @@ width: calc(93% - 300px);
     clear:both;
 }*/
 
+.node-type-celebrity-story .field-name-body p {
+    overflow: hidden;
+}
+
 /*.node-type-article .field-name-body p:first-of-type img:first-of-type {
     position: absolute;
     right: 0;
