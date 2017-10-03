@@ -2666,6 +2666,10 @@ li.comment-add.first.last {
 	margin: 0 0 10px 10px;
 }
 
+.field.field-name-body.field-type-text-with-summary.field-label-hidden p img {
+max-height: 38em;
+}
+
 .featured-video {
 	height:180px;	
 }
@@ -2926,8 +2930,9 @@ width: calc(93% - 300px);
 }
 
 .node-type-celebrity-story  #block-inject-1/*, .node-type-article #block-inject-1*/ {
-    width: 50%;
+width: 45%;
     float: left;
+    margin-right: 5%;
 }
 
 /* Both inline-block and float: left work better but kill the ad */
@@ -2956,14 +2961,19 @@ width: calc(93% - 300px);
     clear:both;
 }*/
 
-.node-type-celebrity-story .field-name-body p {
+/*.node-type-celebrity-story .field-name-body p {
     overflow: hidden;
-}
+}*/
 
 /*.node-type-article .field-name-body p:first-of-type img:first-of-type {
     position: absolute;
     right: 0;
 }*/
+
+.node-type-celebrity-story .field-name-body p, .node-type-article .field-name-body .field-item p {
+    overflow: hidden;
+    min-width: 200px;
+}
 
 .node-type-celebrity-story .field-name-body .clearfix, .node-type-article .field-name-body .clearfix {
     display: none; /** Seemingly unneeded **/
