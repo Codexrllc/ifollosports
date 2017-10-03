@@ -2975,6 +2975,10 @@ width: 45%;
     min-width: 200px;
 }
 
+.node-type-article .field-name-body .field-item p:first-of-type {
+    overflow: visible;
+}
+
 .node-type-celebrity-story .field-name-body .clearfix, .node-type-article .field-name-body .clearfix {
     display: none; /** Seemingly unneeded **/
 }
