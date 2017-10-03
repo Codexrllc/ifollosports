@@ -2938,7 +2938,7 @@ width: 45%;
 /* Both inline-block and float: left work better but kill the ad */
 .node-type-article #block-inject-1/*,.node-type-celebrity-story #block-inject-1*/ {
     display: inline-block;
-    width: 640px;
+    width: 320px;
     height: 100px;
     /*float: left;*/
     /*margin-bottom: 175px;*/
