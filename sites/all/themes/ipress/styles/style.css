@@ -2929,9 +2929,8 @@ width: calc(93% - 300px);
     margin-bottom: 10px;
 }
 
-.node-type-celebrity-story  #block-inject-1/*, .node-type-article #block-inject-1*/ {
+.node-type-celebrity-story #block-inject-1/*, .node-type-article #block-inject-1*/ {
 width: 45%;
-    float: left;
     margin-right: 5%;
 }
 
@@ -2982,45 +2981,3 @@ width: 45%;
 .node-type-celebrity-story .field-name-body .clearfix, .node-type-article .field-name-body .clearfix {
     display: none; /** Seemingly unneeded **/
 }
-
-/*#footer-menu .search-form form {
-	position: relative;
-}
-#footer-menu .search-form input {
-	margin: 12px 0;
-	padding: 0 10px;
-	line-height: 30px;
-	height: 30px;
-	border: 1px solid #eee;
-	/*border-radius: 3px;*/
-	/*font-size: 17px;
-	color: #808080;
-	width: 200px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	-webkit-transition: all 0.2s ease;
-	transition: all 0.2s ease;
-	display: inline;
-}
-#footer-menu .search-form button {
-	position: absolute;
-	top: 7px;
-	right: 12px;
-	background: none;
-	border: 0;
-	font-size: 11px;
-	cursor: pointer;
-	-webkit-transition: all 0.2s ease;
-	transition: all 0.2s ease;
-}
-#footer-menu .search-form button:hover {
-	color: #E84A4A
-}*/
-
-/* #footer-menu ul.sf-menu:before { */
-    /* content: url(/sites/default/files/ifollosports-180-square-logo-blue.png); */
-    /* float: left; */
-    /* top: 0px; */
-    /* position: fixed; */
-/* } */
