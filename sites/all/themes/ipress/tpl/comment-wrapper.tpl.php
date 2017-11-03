@@ -15,6 +15,6 @@
 				<h4>Leave a comment</h4>
 				<div class="gDot"></div>
 			</div>
-			<?php print str_replace('resizable', '', render($content['comment_form'])); ?>
+                        <?php print render($content['comment_form']); ?>
 </div>
 <?php } ?>
