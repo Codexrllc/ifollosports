@@ -1470,7 +1470,7 @@ div.views-row-last div.slide_details {
 .post_m_content {
 	padding: 10px 0;
 }
-.small_posts .s_thumb {
+/*.small_posts .s_thumb {
 	position: relative;
 	float: left;
 	margin: 0 20px 20px 0
@@ -1507,7 +1507,7 @@ div.views-row-last div.slide_details {
 .small_posts .cat {
 	padding: 2px 8px;
 	display: inline-block;
-}
+}*/
 .post_rating {
 	padding: 2px 8px;
 	font-size: 12px;
@@ -2651,9 +2651,9 @@ li li .subarrow {
 }
 
 
-li.comment-add.first.last {
+/*li.comment-add.first.last {
     display:none;
-}
+}*/
 .field.field-name-field-twitter-username.field-type-text.field-label-inline.clearfix:after,
 .field.field-name-field-members.field-type-entityreference.field-label-inline.clearfix:after,
 .field.field-name-field-date-of-birth.field-type-datetime.field-label-inline.clearfix:after {
@@ -2668,6 +2668,7 @@ li.comment-add.first.last {
 
 .field.field-name-body.field-type-text-with-summary.field-label-hidden p img {
 max-height: 38em;
+width: auto;
 }
 
 .featured-video {
@@ -2980,4 +2981,16 @@ width: 45%;
 
 .node-type-celebrity-story .field-name-body .clearfix, .node-type-article .field-name-body .clearfix {
     display: none; /** Seemingly unneeded **/
+}
+
+/* New All Stories View */
+
+.view-id-all_stories li {
+    float: left;
+}
+
+.view-id-all_stories .views-field.views-field-field-picture img {
+    width: 11em;
+    height: 11em;
+    object-fit: cover;
 }
