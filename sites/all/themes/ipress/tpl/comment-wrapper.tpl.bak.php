@@ -1,5 +1,5 @@
 <?php if ($content['#node']->comment and !($content['#node']->comment == 1 and $content['#node']->comment_count)) { ?>
-<div class="news_comments">
+<div id="comments" class="news_comments <?php print $classes; ?>"<?php print $attributes; ?>>
 			<div class="dividerLatest">
 				<h4>Comments (<?php print $content['#node']->comment_count; ?>)</h4>
 				<div class="gDot"></div>
