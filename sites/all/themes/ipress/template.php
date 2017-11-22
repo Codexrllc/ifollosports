@@ -1,29 +1,29 @@
-<?php 
+﻿<?php 
 global $base_url;
-
 function ipress_preprocess_html(&$variables) {
 	
-	drupal_add_css(base_path().path_to_theme().'/styles/style.css');
-	drupal_add_css(base_path().path_to_theme().'/styles/icons.css');
-	drupal_add_css(base_path().path_to_theme().'/styles/animate.css');
-	drupal_add_css(base_path().path_to_theme().'/styles/responsive.css');
+	drupal_add_css(base_path().path_to_theme().'/styles/style.css', array('type' => 'external'));
+	drupal_add_css(path_to_theme().'/styles/icons.css');
+	drupal_add_css(path_to_theme().'/styles/animate.css');
+	drupal_add_css(base_path().path_to_theme().'/styles/responsive.css', array('type' => 'external'));
 	drupal_add_css('http://fonts.googleapis.com/css?family=Roboto:400,300,100,500');
 	
 	
 	$styling = theme_get_setting('styling', 'ipress');
 	if($styling=='rtl')
-		drupal_add_css(base_path().path_to_theme().'/styles/rtl.css');
+		drupal_add_css(path_to_theme().'/styles/rtl.css');
 	
 	//Version background
 	$version = theme_get_setting('version_c', 'ipress');
 	if($version=='dark')
-		drupal_add_css(base_path().path_to_theme().'/styles/dark.css');
+		drupal_add_css(path_to_theme().'/styles/dark.css');
 	
 	
-	drupal_add_css(base_path().path_to_theme().'/styles/update.css');
+	drupal_add_css(path_to_theme().'/styles/update.css');
 	
 	drupal_add_js(base_path().path_to_theme().'/js/jquery.min.js', array('type' => 'file', 'scope' => 'footer'));
 	drupal_add_js(base_path().path_to_theme().'/js/ipress.js', array('type' => 'file', 'scope' => 'footer'));
+        drupal_add_js(base_path().path_to_theme().'/js/comment.js', array('type' => 'file', 'scope' => 'footer'));
 	
 	drupal_add_js(base_path().path_to_theme().'/js/owl.carousel.min.js', array('type' => 'file', 'scope' => 'footer'));
 	drupal_add_js(base_path().path_to_theme().'/js/jquery.ticker.js', array('type' => 'file', 'scope' => 'footer'));
@@ -37,23 +37,19 @@ function ipress_preprocess_html(&$variables) {
 	if(!empty($disable_switcher) && $disable_switcher=='on'){
 		//Style
 		drupal_add_js(base_path().path_to_theme().'/customizer/script.js', array('type' => 'file', 'scope' => 'footer'));
-		drupal_add_css(base_path().path_to_theme().'/customizer/style.css');
+		drupal_add_css(path_to_theme().'/customizer/style.css');
 		//End style
 	}
 	drupal_add_js(base_path().path_to_theme().'/js/jflickrfeed.js', array('type' => 'file', 'scope' => 'footer'));
 	drupal_add_js(base_path().path_to_theme().'/js/update.js', array('type' => 'file', 'scope' => 'footer'));
 }
-
-
 function ipress_form_comment_form_alter(&$form, &$form_state) {
   $form['comment_body']['#after_build'][] = 'ipress_customize_comment_form';
 }
-
 function ipress_customize_comment_form(&$form) {
   $form[LANGUAGE_NONE][0]['format']['#access'] = FALSE;
   return $form;
 }
-
 function ipress_preprocess_page(&$vars) {
 	
 	if (isset($vars['node'])) {  
@@ -67,7 +63,6 @@ function ipress_preprocess_page(&$vars) {
 	}
 	
 }
-
 //custom main menu
 function ipress_menu_tree__main_menu($variables) {
 	$str = '';
@@ -84,7 +79,6 @@ function ipress_css_alter(&$css) {
 	
 //	unset($css[drupal_get_path('module', 'system') . '/system.base.css']);
 }
-
 function ipress_form_alter(&$form, &$form_state, $form_id) {
 	if ($form_id == 'search_block_form') {
 		$form['search_block_form']['#title_display'] = 'invisible'; // Toggle label visibilty
@@ -114,16 +108,13 @@ function ipress_textarea($variables) {
   $element['#attributes']['cols'] = $element['#cols'];
   $element['#attributes']['rows'] = $element['#rows'];
   _form_set_class($element, array('form-textarea'));
-
   $wrapper_attributes = array(
     'class' => array('form-textarea-wrapper'),
   );
-
   // Add resizable behavior.
   if (!empty($element['#resizable'])) {
     $wrapper_attributes['class'][] = 'resizable';
   }
-
   $output = '<div' . drupal_attributes($wrapper_attributes) . '>';
   $output .= '<textarea' . drupal_attributes($element['#attributes']) . '>' . check_plain($element['#value']) . '</textarea>';
   $output .= '</div>';

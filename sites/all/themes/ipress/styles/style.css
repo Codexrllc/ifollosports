@@ -52,7 +52,7 @@ table {
 body {
 	margin: 0 auto;
 	background: #ddd;
-	color: #7A7A7A;
+	color: #000;
 	line-height: 24px;
 	font-family: "Roboto", Helvetica, Tahoma, Arial;
 	font-weight: 400;
@@ -73,13 +73,36 @@ img {
 	width:100%;
 }
 a {
-	color: #000;
+	color: #0645AD;
 	text-decoration: none;
 	-webkit-transition: color 0.1s ease-in-out;
 	transition: color 0.1s ease-in-out
 }
 a:hover {
-	color: #E84A4A
+	color: #0B0080;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .view-all-stories .views-more-link {
+	color: #000;
+	padding: 0;
+	margin: 0 0 10px 0;
+	font-family: "Roboto", Helvetica, Tahoma, Arial;
+	font-weight: 700;
+	line-height: 28px
+}
+.view-all-stories .views-more-link {
+    font-size: 20px;
+        line-height: 56px !important;
+}
+.view-all-stories .views-more-link:hover {
+    color: #244db5;
+}
+
+.view-all-stories .view-footer {
+        margin-left: calc(14.5em + 28px);
+}
+.view-all-stories .view-footer h3 {
+        font-size: 24px;
+        line-height: 72px;
 }
 h1, h2, h3, h4, h5, h6 {
 	color: #484747;
@@ -259,7 +282,8 @@ textarea {
 	width:100%;
 }
 .front .grid_8.alpha, .front .grid_8.omega {
-	width:65.667%;
+	/*width:65.667%;*/
+        width:100%;
 }
 .grid_9.alpha,.grid_9.omega {
 	width:74.0%;
@@ -305,6 +329,7 @@ textarea {
 }
 .boxed-margin {
 	margin: 30px auto;
+        margin-top: 25px;
 	width: 1300px;
 	background: #fff;
 	position: relative;
@@ -1068,9 +1093,9 @@ li li a .sf-sub-indicator {
 
 /*	Page Content
 ----------------------------------------------------------------------*/
-.page-content {
+/*.page-content {
 	margin: 100px 0 10px 0;
-}
+}*/
 .ipress_slider .item img{
 	display: block;
 	width: 100%;
@@ -2628,7 +2653,7 @@ li li .subarrow {
     /*text-align: right;*/
 }
 
-.views-field.views-field-field-picture {
+.views-field.views-field-field-picture, .views-field-field-computed-image {
     padding: 8px;
     align-items: center;
     /*display: list-item;*/
@@ -2699,7 +2724,7 @@ width: auto;
 }
 
 /*Athletes View Page*/
-.views-field.views-field-field-picture img {
+.views-field.views-field-field-picture img, .views-field-field-computed-image img {
     width: auto;
     float:left;
     padding-right:10px;
@@ -2989,8 +3014,79 @@ width: 45%;
     float: left;
 }
 
-.view-id-all_stories .views-field.views-field-field-picture img {
-    width: 11em;
-    height: 11em;
+.view-id-all_stories .views-field.views-field-field-picture img, .view-id-all_stories .views-field-field-computed-image img {
+    width: 14.5em;
+    height: 14.5em;
     object-fit: cover;
+}
+
+@media only screen and (max-width: 768px) {
+.view-top-news {
+    display: none;
+}
+}
+
+@media only screen and (min-width: 768px) {
+.headlines-desktop {
+    display: none;
+}
+}
+
+#mobile-ad {
+    margin-bottom: 20px;
+}
+
+.view-top-news .views-row-odd .half {
+    border-right: 4.9px solid black;
+        width: calc(50% - 2.5px);
+}
+
+.view-top-news .views-row-even .half {
+        width: calc(50% - 2.5px);
+}
+
+
+.view-top-news .views-row-1 .half, .view-top-news .views-row-2 .half {
+    border-bottom: 2.5px solid black;
+}
+.view-top-news .views-row-3 .half, .view-top-news .views-row-4 .half {
+    border-top: 2.5px solid black;
+}
+
+.submission-cta {
+    font-size: 15px;
+    color: black;
+}
+.comment-button {
+        background-color: #FFF;
+    border: 0;
+    border-radius: 4px;
+    color: #06c;
+    width: 320px;
+            transition-property: background-color;
+                -webkit-transition-property: background-color;
+                        line-height: 31px;
+                        padding: 0 18px;
+                            border: 1px solid #06c;
+}
+
+.comment-button:hover {
+            background-color: #06c;
+            color: #fff;
+}
+
+/* No need for this - maybe remove elsewhere but this should be fine */
+.fb-comments {
+    display: none;
+}
+
+body.admin-menu.adminimal-menu:before {
+    height: 0px !important;
+}
+#footer p, .footer_last .copyright {
+    color: #7A7A7A;
+}
+.view-all-stories .views-more-link{
+    position: relative;
+    display: block;
 }
