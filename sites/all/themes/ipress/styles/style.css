@@ -2575,7 +2575,7 @@ a.notification-close {
 
 .mb { margin-bottom: 20px !important }
 .mbt { margin-bottom: 30px !important }
-.mbf { margin-bottom: 80px !important }
+/*.mbf { margin-bottom: 80px !important }*/
 .mbff { margin-bottom: 50px !important }
 .mbs { margin-bottom: 70px !important  }
 
@@ -3076,7 +3076,7 @@ width: 45%;
 }
 
 /* No need for this - maybe remove elsewhere but this should be fine */
-.fb-comments {
+.fb-comments .fb_iframe_widget {
     display: none;
 }
 
@@ -3089,4 +3089,19 @@ body.admin-menu.adminimal-menu:before {
 .view-all-stories .views-more-link{
     position: relative;
     display: block;
+}
+
+.view-top-news {
+margin-top: 1em;
+}
+
+.grid_8 .title {
+margin-top: 80px !important;
+}
+
+.fb-comments.fb_iframe_widget {
+    display: none;
+}
+html {
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
 }

@@ -28,7 +28,7 @@
 	.sidebar, .post {width: 100%;margin: 0 0 40px}
 	.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12,
 	.grid_1.alpha,.grid_1.omega, .grid_2.alpha,.grid_2.omega, .grid_3.alpha,.grid_3.omega, .grid_4.alpha,.grid_4.omega, .grid_5.alpha,.grid_5.omega,
-	.grid_6.alpha,.grid_6.omega, .grid_7.alpha,.grid_7.omega, .grid_8.alpha,.grid_8.omega, .grid_9.alpha,.grid_9.omega, .grid_10.alpha,.grid_10.omega, .grid_11.alpha,.grid_11.omega {width: 100%;margin: 0 0 30px}
+	.grid_6.alpha,.grid_6.omega, .grid_7.alpha,.grid_7.omega, .grid_8.alpha,.grid_8.omega, .grid_9.alpha,.grid_9.omega, .grid_10.alpha,.grid_10.omega, .grid_11.alpha,.grid_11.omega, .front .grid_8.omega {width: 100%;margin: 0 0 30px}
 
 	#mobilepro, .subarrow { display: block; }
 	.subarrow {display: block;z-index: 99;position: absolute;top: 0;right: 0;cursor: pointer;font-size: 16px;}
@@ -82,7 +82,7 @@
 	.sidebar, .post {width: 100%;margin: 0 0 40px}
 	.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12,
 	.grid_1.alpha,.grid_1.omega, .grid_2.alpha,.grid_2.omega, .grid_3.alpha,.grid_3.omega, .grid_4.alpha,.grid_4.omega, .grid_5.alpha,.grid_5.omega,
-	.grid_6.alpha,.grid_6.omega, .grid_7.alpha,.grid_7.omega, .grid_8.alpha,.grid_8.omega, .grid_9.alpha,.grid_9.omega, .grid_10.alpha,.grid_10.omega, .grid_11.alpha,.grid_11.omega {width: 100%;margin: 0 0 30px}
+	.grid_6.alpha,.grid_6.omega, .grid_7.alpha,.grid_7.omega, .grid_8.alpha,.grid_8.omega, .grid_9.alpha,.grid_9.omega, .grid_10.alpha,.grid_10.omega, .grid_11.alpha,.grid_11.omega, .front .grid_8.omega {width: 100%;margin: 0 0 30px}
 
 	#mobilepro, .subarrow { display: block; }
 	.subarrow {display: block;z-index: 99;position: absolute;top: 0;right: 0;cursor: pointer;font-size: 16px;}
@@ -149,7 +149,7 @@
 	.sidebar, .post {width: 100%;margin: 0 0 40px}
 	.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12,
 	.grid_1.alpha,.grid_1.omega, .grid_2.alpha,.grid_2.omega, .grid_3.alpha,.grid_3.omega, .grid_4.alpha,.grid_4.omega, .grid_5.alpha,.grid_5.omega,
-	.grid_6.alpha,.grid_6.omega, .grid_7.alpha,.grid_7.omega, .grid_8.alpha,.grid_8.omega, .grid_9.alpha,.grid_9.omega, .grid_10.alpha,.grid_10.omega, .grid_11.alpha,.grid_11.omega {width: 100%;margin: 0 0 30px}
+	.grid_6.alpha,.grid_6.omega, .grid_7.alpha,.grid_7.omega, .grid_8.alpha,.grid_8.omega, .grid_9.alpha,.grid_9.omega, .grid_10.alpha,.grid_10.omega, .grid_11.alpha,.grid_11.omega, .front .grid_8.omega {width: 100%;margin: 0 0 30px}
 
 	#mobilepro, .subarrow { display: block; }
 	.subarrow {display: block;z-index: 99;position: absolute;top: 0;right: 0;cursor: pointer;font-size: 16px;}
@@ -232,3 +232,44 @@
         top: 10em;
     }
 }*/
+
+@media only screen and (max-width: 650px) {
+.adsbygoogle {
+    width: 200px;
+}
+}
+
+    .page-content {
+        padding-top: 5em;
+    }
+@media only screen and (max-width: 1160px) {
+    .page-content {
+        padding-top: 7em;
+    }
+}
+@media only screen and (max-width: 1015px) {
+    .page-content {
+        padding-top: 9em;
+    }
+}
+@media only screen and (max-width: 975px) {
+    .page-content {
+        padding-top: 4em;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .page-content {
+        padding-top: 7em;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .page-content {
+        padding-top: 8em;
+    }
+}
+@media only screen and (max-width: 959px) {
+        .view-all-stories .view-footer {
+        text-align: center;
+        margin-left: 0px;
+}
+}
